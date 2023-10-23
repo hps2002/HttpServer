@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libSTA_LIB.a  CMakeFiles/STA_LIB.dir/CGImysql/sql_connection_pool.cpp.o CMakeFiles/STA_LIB.dir/http/http_conn.cpp.o CMakeFiles/STA_LIB.dir/log/log.cpp.o CMakeFiles/STA_LIB.dir/timer/lst_timer.cpp.o CMakeFiles/STA_LIB.dir/config.cpp.o CMakeFiles/STA_LIB.dir/webserver.cpp.o
+/usr/bin/ranlib ../lib/libSTA_LIB.a

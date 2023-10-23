@@ -226,6 +226,7 @@ bool WebServer::dealclinetdata()
         while (1)
         {
             int connfd = accept(m_listenfd, (struct sockaddr *)&client_address, &client_addrlength);
+            std::cout << "get client" << std::endl;
             if (connfd < 0)
             {
                 LOG_ERROR("%s:errno is:%d", "accept error", errno);
@@ -389,6 +390,9 @@ void WebServer::eventLoop()
     while (!stop_server)
     {
         int number = epoll_wait(m_epollfd, events, MAX_EVENT_NUMBER, -1);
+        if (number > 0) {
+          std::cout << "get event things: " << number << std::endl;
+        }
         if (number < 0 && errno != EINTR)
         {
             LOG_ERROR("%s", "epoll failure");

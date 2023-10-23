@@ -87,7 +87,7 @@ public:
     int improv;
 
 
-private:
+public:
     void init();
     HTTP_CODE process_read();
     bool process_write(HTTP_CODE ret);
@@ -114,21 +114,21 @@ public:
     int m_state;  //读为0, 写为1
 
 private:
-    int m_sockfd;
-    sockaddr_in m_address;
-    char m_read_buf[READ_BUFFER_SIZE];
-    int m_read_idx;
-    int m_checked_idx;
-    int m_start_line;
-    char m_write_buf[WRITE_BUFFER_SIZE];
-    int m_write_idx;
+    int m_sockfd;//客户端的socket文件描述符
+    sockaddr_in m_address;//客户端的ip地址
+    char m_read_buf[READ_BUFFER_SIZE];//存放读取到的hhtp数据
+    int m_read_idx;//读索引
+    int m_checked_idx;//查索引
+    int m_start_line;//开始的行数
+    char m_write_buf[WRITE_BUFFER_SIZE];//写数据缓冲区
+    int m_write_idx;//写索引
     CHECK_STATE m_check_state;
     METHOD m_method;
     char m_real_file[FILENAME_LEN];
-    char *m_url;
-    char *m_version;
-    char *m_host;
-    int m_content_length;
+    char *m_url;//http请求的url
+    char *m_version;//http协议版本
+    char *m_host;//主机
+    int m_content_length;//内容长度
     bool m_linger;
     char *m_file_address;
     struct stat m_file_stat;

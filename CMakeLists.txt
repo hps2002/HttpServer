@@ -29,8 +29,9 @@ link_directories(/usr/lib)
 #     ./webserver.h
 # )
 #生成静态库
-# add_library(hps_server  ${LIB_SRC})
+# add_library(hps_server STATIC ${LIB_SRC})
 
+# 生成依赖
 set(DEN
     ./CGImysql/sql_connection_pool.cpp
     ./http/http_conn.cpp

@@ -1,0 +1,1 @@
+/home/ubuntu/hps_server/install/bin/server

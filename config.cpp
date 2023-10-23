@@ -1,7 +1,7 @@
 #include "config.h"
 
 Config::Config(){
-    //端口号,默认9006
+    //端口号,默认80
     PORT = 80;
 
     //日志写入方式，默认同步
@@ -29,7 +29,7 @@ Config::Config(){
     close_log = 0;
 
     //并发模型,默认是reactor
-    actor_model = 1;
+    actor_model = 0;
 }
 
 void Config::parse_arg(int argc, char*argv[]){

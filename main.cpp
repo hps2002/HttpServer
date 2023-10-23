@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     //监听
     server.eventListen();
 
+    std::cout << "before run eventLoop" << std::endl;
     //运行
     server.eventLoop();
 
